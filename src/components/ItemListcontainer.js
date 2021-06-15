@@ -8,9 +8,9 @@ function Itemlistcontainer(greeting){
         <>
        
         <ul>
-            <il>
+            <li>
                  <h1>greeting</h1>
-            </il>
+            </li>
         </ul>
         </>
     )

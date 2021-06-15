@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import NavBar from './components/NavBar';
 import CardWithClass from './components/CardWithClass';
 import ItemListcontainer from './components/ItemListcontainer';
+import ItemCount from './components/ItemCount';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div>
-         <CardWithClass/>
+         <ItemCount initial={0} stock={10}></ItemCount>
          Gabriel conforte
          
         </div>

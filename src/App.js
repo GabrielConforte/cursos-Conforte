@@ -1,16 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import NavBar from './components/NavBar';
+import CardWithClass from './components/CardWithClass';
+import ItemListcontainer from './components/ItemListcontainer';
+
 
 function App() {
   return (
     <div className="App">
-      <NavBar></NavBar>
+      <NavBar/><ItemListcontainer></ItemListcontainer>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <div>
+         <CardWithClass/>
          Gabriel conforte
-        </p>
+         
+        </div>
         <a
           className="App-link"
           href="https://reactjs.org"

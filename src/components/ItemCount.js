@@ -12,6 +12,12 @@ const ItemCount = ({stock, initial}) => {
         }
     }
 
+    const lessCount = () =>{
+        if(count > 0){
+            setCount(count -1)
+        }
+    }
+
     const onAdd = () =>{
         setCount(0)
         setStock(contar-count)
@@ -21,7 +27,7 @@ const ItemCount = ({stock, initial}) => {
         <div>
            <div> <button onClick={(addCount)}>+</button>
             {count}
-            <button onClick={() => setCount(count -1)}>-</button>
+            <button onClick={(lessCount)}>-</button>
             <button onClick={(onAdd)}>Agregar al Carrito</button></div>
             
         </div>

@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import NavBar from './components/NavBar';
-import CardWithClass from './components/CardWithClass';
 import ItemListcontainer from './components/ItemListcontainer';
 import ItemCount from './components/ItemCount';
 

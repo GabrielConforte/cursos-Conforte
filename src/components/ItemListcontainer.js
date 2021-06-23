@@ -1,4 +1,5 @@
 import React from 'react';
+import ItemList from './ItemList';
 
 function Itemlistcontainer(greeting){
     console.log('props', greeting);
@@ -6,12 +7,7 @@ function Itemlistcontainer(greeting){
 
     return(
         <>
-       
-        <ul>
-            <li>
-                 <h1>greeting</h1>
-            </li>
-        </ul>
+        <div className="container"><ItemList/></div>
         </>
     )
 

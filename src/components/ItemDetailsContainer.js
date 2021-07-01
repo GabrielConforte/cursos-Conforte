@@ -1,11 +1,10 @@
 import React from "react";
 
-function details() {
+function ItemDetailsContainer() {
   return (
     <div className="App">
-      
     </div>
   );
 }
 
-export default details;
+export default ItemDetailsContainer;

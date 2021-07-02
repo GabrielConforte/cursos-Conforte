@@ -9,10 +9,13 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './pages/Home';
-import Category from './pages/Category';
-import Checkout from './pages/Checkout';
-import Products from './pages/Products';
+import Programing from './pages/Programing';
+import Desing from './pages/Desing';
+import Marketing from './pages/Marketing';
+import SelfImp from './pages/SelfImp';
+
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 import { Container, Row } from 'react-bootstrap';
 import ItemListcontainer from './components/ItemListcontainer'
 //
@@ -27,11 +30,17 @@ function App() {
                             <Route path="/Home">
                               <Home/>
                             </Route>
-                            <Route path="/Category">
-                                  <Category/>
+                            <Route path="/Programing">
+                                  <Programing/>
                             </Route>
-                            <Route path="/Products">
-                              <Products/>
+                            <Route path="/Desing">
+                              <Desing/>
+                            </Route>
+                            <Route path="/Marketing">
+                              <Marketing/>
+                            </Route>
+                            <Route path="/SelfImp">
+                              <SelfImp/>
                             </Route>
                             <Route path="/Checkout">
                               <Checkout/>

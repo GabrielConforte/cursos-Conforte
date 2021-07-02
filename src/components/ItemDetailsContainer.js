@@ -1,9 +1,14 @@
 import React from "react";
+import ItemDetail from './ItemDetail'
+import { Card } from 'react-bootstrap'
 
 function ItemDetailsContainer() {
   return (
-    <div className="App">
-    </div>
+    <>
+    <Card>
+    <ItemDetail></ItemDetail>
+    </Card>
+    </>
   );
 }
 

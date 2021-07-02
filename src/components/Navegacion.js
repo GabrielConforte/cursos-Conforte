@@ -12,9 +12,10 @@ function Navegacion(){
                 <Navbar.Collapse id='responsive-navbar-nav'>
                   <Nav>
                     <Nav.Link href="/Home">Home</Nav.Link>
-                    <Nav.Link href="/Category">Category</Nav.Link>
-                    <Nav.Link href="/Products">Product</Nav.Link>
-                    <Nav.Link href="/Checkout">Checkout</Nav.Link>
+                    <Nav.Link href="/Programing">Programacion</Nav.Link>
+                    <Nav.Link href="/Desing">Diseño</Nav.Link>
+                    <Nav.Link href="/Marketing">Marketing</Nav.Link>
+                    <Nav.Link href="/SelfImp">Desarrollo Personal</Nav.Link>
                     <Nav.Link href="/Cart"><CartWidget/></Nav.Link>
                   </Nav>
                 </Navbar.Collapse>

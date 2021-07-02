@@ -1,24 +1,6 @@
 import React from "react";
-/* const items = [
-{
-  id: 1,
-  name: 'tal-1'
-},
-{
-  id: 2,
-  name: 'tal-2'
-},
-{
-  id: 3,
-  name: 'tal-3'
-},
-{
-  id: 4,
-  name: 'tal-4'
-}
-] */
 
-function Products() {
+function Marketing() {
   return (
       <div className="App-body">
       Contrary to popular belief,
@@ -45,5 +27,4 @@ function Products() {
 
   );
 }
-
-export default Products;
+export default Marketing;

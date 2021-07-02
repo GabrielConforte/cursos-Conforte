@@ -1,8 +1,8 @@
 import React from "react";
 
-function Category() {
+function SelfImp() {
   return (
-    <div className="App-body">
+      <div className="App-body">
       Contrary to popular belief,
       Lorem Ipsum is not simply random text.
       It has roots in a piece of classical
@@ -27,5 +27,4 @@ function Category() {
 
   );
 }
-
-export default Category;
+export default SelfImp;

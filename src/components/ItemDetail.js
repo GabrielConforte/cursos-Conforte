@@ -1,27 +1,36 @@
-import { promises } from 'node:fs';
+
 import React, {useState, useEffect} from 'react';
+import { Card } from 'react-bootstrap'
 
 const productDetail = {
-    name: Python
+    id: 1,
+    name: "Python",
+    description: "lorem ipsum, more",
+    image: "https://picsum.photos/200/300"
 }
 
-function itemDetail(){
+function ItemDetail(){
     const [detailProduct, setDetailProduct] = useState ({})
 
     useEffect(()=>{
 
-        promises((resolve, reject) =>{
-            setTeimeout(() => resolve(),2000)
+        new Promise((resolve, reject) =>{
+            setTimeout(() => resolve(),2000)
         }).then ((res) => setDetailProduct(res))
 
     }, [])
 
     return(
         <div>
-            {detailProduct.name}
-            {data}
+            <Card.Img>{detailProduct.image}</Card.Img>
+            <Card.Body>
+            <Card.Title>{detailProduct.name}</Card.Title>
+            <Card.Text>{detailProduct.description}</Card.Text>
+            </Card.Body>
         </div>
     )
 
 } 
 
+
+export default ItemDetail;

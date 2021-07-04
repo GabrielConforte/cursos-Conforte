@@ -6,8 +6,7 @@ function ItemListcontainer(greeting){
 
 
     return(
-        <div>
-        <div className="container"><ItemList/></div>
+        <div className="row"><ItemList/>
         </div>
     )
 

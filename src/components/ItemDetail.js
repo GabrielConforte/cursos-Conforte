@@ -1,36 +1,44 @@
-
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { Card } from 'react-bootstrap'
 
-const productDetail = {
-    id: 1,
-    name: "Python",
-    description: "lorem ipsum, more",
-    image: "https://picsum.photos/200/300"
-}
 
-function ItemDetail(){
-    const [detailProduct, setDetailProduct] = useState ({})
+const ItemDetail = (item) => {
 
-    useEffect(()=>{
-
-        new Promise((resolve, reject) =>{
-            setTimeout(() => resolve(),2000)
-        }).then ((res) => setDetailProduct(res))
-
-    }, [])
+const {imagen, titulo, texto} = item
 
     return(
         <div>
-            <Card.Img>{detailProduct.image}</Card.Img>
-            <Card.Body>
-            <Card.Title>{detailProduct.name}</Card.Title>
-            <Card.Text>{detailProduct.description}</Card.Text>
-            </Card.Body>
+            <Card>
+                <Card.Img src={imagen}/>
+                <Card.Body>
+                    <Card.Title>{titulo}</Card.Title>
+                    <Card.Text>{texto}</Card.Text>
+                    <button className="btn btn-primary sm">COMPRA YA!</button>
+                </Card.Body>
+            </Card>
+
+          
         </div>
-    )
+    );
 
 } 
 
 
 export default ItemDetail;
+
+/*   
+
+    const getDetailProduct = async () => {
+        const response = await fetch("https://60df53e6abbdd9001722d380.mockapi.io/api/1/");
+        const data = await response.json();
+        console.log(data.results)
+        setDetailProduct(data.results);
+      };
+
+    useEffect(()=>{
+
+       getDetailProduct();
+
+    }, [])
+
+    console.log("detailProduct", detailProduct) */

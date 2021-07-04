@@ -1,32 +1,32 @@
 import React, {useState, useEffect} from 'react';
-import Card from './Card';
+import ItemDetailsContainer from './ItemDetailsContainer';
 
 const referensData = [
     {
-        name: {
-            course: 'React',
-        }
+       name: 'Java',
+       id: 1,
+       text: "Aprende java, esta bueno",
+       imagen: "https://picsum.photos/200/200"
     },
     {
-        name: {
-            course: 'Python',
-        }
+        name:'Python',
+        id: 2,
+        text: "Aprende python, esta bueno",
+        imagen: "https://picsum.photos/200/200"
     },
     {
-        name: {
-            course: 'JavaScript',
-        }
+        name:'JavaScript',
+        id: 3,
+        text: "Aprende JavaScript, esta bueno",
+        imagen: "https://picsum.photos/200/200"
+        
     },
 ]
-
+console.log(referensData)
 
 function ItemList(){
 
     const [referens, setReferences] = useState([]);
-
-    const buttonFunction = () => {
-        alert('Hace algo')
-    }
 
     useEffect(() => { 
         new Promise((resolve, reject) => {
@@ -37,12 +37,17 @@ function ItemList(){
             }
         ) 
     }, []) // componentDidMount
-
     return(
-        <div className="row justify-content-center">
-          {referens.map((item, key) => 
-                <Card {...item} buttonFunction={buttonFunction} />)}  
-        </div>
+            <div className="col-6 ">
+              {referens.map((items) => (
+                <div key={items.id}>
+                    <ItemDetailsContainer 
+                        imagen={items.imagen}
+                        titulo={items.name}
+                        texto={items.text}>
+                    </ItemDetailsContainer></div>
+              ))}
+            </div>
     )
 }
 

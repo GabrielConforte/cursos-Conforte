@@ -38,9 +38,9 @@ function ItemList(){
         ) 
     }, []) // componentDidMount
     return(
-            <div className="col-6 ">
+            <div className="row">
               {referens.map((items) => (
-                <div key={items.id}>
+                <div className="col-4" key={items.id}>
                     <ItemDetailsContainer 
                         imagen={items.imagen}
                         titulo={items.name}

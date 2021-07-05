@@ -6,7 +6,9 @@ function ItemListcontainer(greeting){
 
 
     return(
-        <div className="row"><ItemList/>
+        <div>
+            <h3>Cursos Disponibles</h3>
+            <ItemList/>
         </div>
     )
 

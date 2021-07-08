@@ -23,7 +23,7 @@ function ItemListcontainer(a){
                         };
                     });
                     setCurso(aux);
-                }, 3000)
+                }, 2000)
             }
             setCurso([])
             data([])

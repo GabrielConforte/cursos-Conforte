@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Navegacion from './components/Navegacion';
-//import ItemCount from './components/ItemCount';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,7 +12,6 @@ import Programing from './pages/Programing';
 import Desing from './pages/Desing';
 import Marketing from './pages/Marketing';
 import SelfImp from './pages/SelfImp';
-
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import { Container, Row } from 'react-bootstrap';
@@ -27,7 +25,7 @@ function App() {
           <Row>
                     <Switch>
                             <Route path="/Home">
-                                  <Home/>
+                                 
                             </Route>
                             <Route path="/Programing">
                                   <Programing/>

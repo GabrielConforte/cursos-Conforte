@@ -17,7 +17,6 @@ import SelfImp from './pages/SelfImp';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import { Container, Row } from 'react-bootstrap';
-import ItemListcontainer from './components/ItemListcontainer'
 
 
 function App() {
@@ -50,7 +49,6 @@ function App() {
                             </Route>
                         </Switch>
                   </Row>
-                  <ItemListcontainer></ItemListcontainer>
         </Container>
       </div>
     </Router>

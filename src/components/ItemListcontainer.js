@@ -3,8 +3,7 @@ import ItemList from './ItemList';
 import {getData} from './getItems'
 
 
-function ItemListcontainer(){
-
+function ItemListcontainer(a){
 
     const [curso, setCurso] = useState([]);
     
@@ -12,15 +11,15 @@ function ItemListcontainer(){
         try{ useEffect(() => {
             
             const data = async () => {
-                const data = await getData();
-                
+                const data = await getData(a);
                 setTimeout(() => {
                     const aux = data.map((item) => {
                         return {
                             id: item.id,
                             img: item.image,
                             tittle: item.tittle,
-                            text: item.text
+                            text: item.text,
+                            price: item.price
                         };
                     });
                     setCurso(aux);

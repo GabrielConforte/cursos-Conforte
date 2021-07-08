@@ -1,10 +1,10 @@
 import React from "react";
+import ItemListcontainer from "../components/ItemListcontainer";
+
 function Home() {
   return (
       <div className="">
-
-    Wellcome
-
+        <ItemListcontainer item="home"></ItemListcontainer>
       </div>
 
   );

@@ -19,7 +19,7 @@ const Tarjeta = ({ img, tittle, id, price }) => {
                     <Card.Title>{tittle}</Card.Title>
                     <Card.Text>${price}</Card.Text>
                     <Button variant="primary" onClick={carritoAnuncio}>Agregar al Carrito</Button>
-                    <Link to="/ItenDetailsContainer" component={ItemDetailsContainer}>
+                    <Link to="/ItenDetailsContainer">
                     <Button variant="secondary">
                             Detalles
                     </Button>

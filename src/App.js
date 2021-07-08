@@ -18,14 +18,15 @@ import { Container, Row } from 'react-bootstrap';
 
 
 function App() {
-  return (<Router>
+  return (
+  <Router>
       <div className="App">
         <Navegacion/>
         <Container>
           <Row>
                     <Switch>
                             <Route path="/Home">
-                                 
+                                 <Home></Home>
                             </Route>
                             <Route path="/Programing">
                                   <Programing/>

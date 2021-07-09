@@ -32,7 +32,7 @@ function ItemListcontainer(a){
 return(
     <div>
         {curso.length > 0 ? <ItemList curso={curso}></ItemList> :
-            <h2>CARGANDO</h2>}
+            <h2><img src="https://cdn.dribbble.com/users/563824/screenshots/3633228/untitled-5.gif"></img></h2>}
     </div>
 )
 }catch(e){
@@ -42,25 +42,3 @@ return(
 }
 
 export default ItemListcontainer;
-
-/* 
-            const data = async () => {
-                const response = await fetch('https://60e3b3496c365a0017839363.mockapi.io/cursos/conforte/Cursos');
-               
-                const data = response.json
-                console.log(data)
-                setTimeout(() => {
-                    const aux = data.map((item) => {
-                        return {
-                            id: item.id,
-                            img: item.imagen,
-                            tittle: item.tittle,
-                            text: item.text
-                        };
-                    });
-                    setCurso(aux);
-                }, 3000)
-            }
-            setCurso([])
-            data([])
-        },[]);*/

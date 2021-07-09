@@ -15,17 +15,19 @@ import SelfImp from './pages/SelfImp';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import { Container, Row } from 'react-bootstrap';
+import ItemDetailsContainer from './components/ItemDetailsContainer';
 
 
 function App() {
+
   return (
-  <Router>
+  <Router><Navegacion/>
       <div className="App">
-        <Navegacion/>
+        
         <Container>
           <Row>
                     <Switch>
-                            <Route path="/Home">
+                            <Route exact path="/">
                                  <Home></Home>
                             </Route>
                             <Route path="/Programing">
@@ -45,6 +47,9 @@ function App() {
                             </Route>
                                   <Route path="/Cart">
                               <Cart/>
+                            </Route>
+                            <Route path="/itemDetailsContainer/:id">
+                                <ItemDetailsContainer/>
                             </Route>
                         </Switch>
                   </Row>

@@ -1,33 +1,25 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
-import { Switch, Router, Link} from 'react-router-dom'
-import ItemDetailsContainer from './ItemDetailsContainer';
+import {Link} from "react-router-dom";
 
 const Tarjeta = ({ img, tittle, id, price }) => {
 
     function carritoAnuncio() {
         alert("Agregado");
     }
-
  
     return (
-        < >
-        <Switch>
+        <div>
             <Card>
                 <Card.Img className="imagen" variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{tittle}</Card.Title>
                     <Card.Text>${price}</Card.Text>
                     <Button variant="primary" onClick={carritoAnuncio}>Agregar al Carrito</Button>
-                    <Link to="/ItenDetailsContainer">
-                    <Button variant="secondary">
-                            Detalles
-                    </Button>
-                    </Link>
-                </Card.Body>
+                    <Link to={`/itemDetailsContainer/${id}`}><Button variant="secondary" >Detalle</Button>
+                </Link></Card.Body>
             </Card>
-        </Switch>
-        </>
+        </div> 
     )
 }
 

@@ -1,7 +1,10 @@
 /////
+
 import React from 'react'
 import CartWidget from './CartWidget'
 import { Navbar, Nav, Container } from 'react-bootstrap';
+
+
 
 function Navegacion(){
     return (
@@ -11,7 +14,7 @@ function Navegacion(){
                 <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>
                   <Nav>
-                    <Nav.Link href="/Home">Home</Nav.Link>
+                    <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/Programing">Programacion</Nav.Link>
                     <Nav.Link href="/Desing">Diseño</Nav.Link>
                     <Nav.Link href="/Marketing">Marketing</Nav.Link>

@@ -8,7 +8,7 @@ const {imagen, titulo, texto} = item
 
     return(
         <div>
-            <Card className="col-4">
+            <Card className="">
                 <Card.Img src={imagen}/>
                 <Card.Body>
                     <Card.Title>{titulo}</Card.Title>

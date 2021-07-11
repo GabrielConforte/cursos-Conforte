@@ -7,7 +7,7 @@ const Tarjeta = ({ img, tittle, id, price }) => {
     function carritoAnuncio() {
         alert("Agregado");
     }
- 
+    
     return (
         <div>
             <Card>

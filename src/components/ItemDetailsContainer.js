@@ -8,8 +8,7 @@ function ItemDetailsContainer(){
   const [curso, setCurso] = useState([]);
     
     const id = useParams()
-    console.log(id)
-
+    
      useEffect(() => {
           const data = async () => {
               const sata = await getDataID(id); 
@@ -18,15 +17,15 @@ function ItemDetailsContainer(){
           data([])
       },[]);
        
-return(
-  <div>
-    {
+      return(
+        <div>
+          {
 
-  <ItemDetail imagen={curso.image} titulo={curso.tittle} texto={curso.text}></ItemDetail>
-      
-    }
-  </div>
-)
+           <ItemDetail imagen={curso.image} titulo={curso.tittle} texto={curso.text}></ItemDetail>
+            
+          }
+        </div>
+      )
 }
 
 export default ItemDetailsContainer;

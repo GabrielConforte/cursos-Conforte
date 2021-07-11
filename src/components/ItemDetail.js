@@ -8,17 +8,24 @@ const {imagen, titulo, texto} = item
 
     return(
         <div>
-            <Card className="">
-                <Card.Img src={imagen}/>
-                <Card.Body>
-                    <Card.Title>{titulo}</Card.Title>
-                    <Card.Text>{texto}</Card.Text>
-                    <button className="btn btn-primary sm">COMPRA YA!</button>
-                    <ItemCount stock={10} initial={0}></ItemCount>
-                </Card.Body>
-            </Card>
-
-          
+            <div className="container ">
+                <div className="row">
+                    
+                    <Card className="col-sm-6">
+                            <Card.Body>
+                                <Card.Img src={imagen}/>
+                            </Card.Body>
+                    </Card>
+                    <Card className="col-sm-6">
+                            <Card.Body>
+                                <Card.Title>{titulo}</Card.Title>
+                                <Card.Text>{texto}</Card.Text>
+                                <button className="btn btn-primary sm">COMPRA YA!</button>
+                                <ItemCount stock={10} initial={0}></ItemCount>
+                            </Card.Body>
+                    </Card>
+                </div>
+            </div>
         </div>
     );
 
@@ -26,20 +33,3 @@ const {imagen, titulo, texto} = item
 
 
 export default ItemDetail;
-
-/*   
-
-    const getDetailProduct = async () => {
-        const response = await fetch("https://60df53e6abbdd9001722d380.mockapi.io/api/1/");
-        const data = await response.json();
-        console.log(data.results)
-        setDetailProduct(data.results);
-      };
-
-    useEffect(()=>{
-
-       getDetailProduct();
-
-    }, [])
-
-    console.log("detailProduct", detailProduct) */

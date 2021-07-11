@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const ItemCount = ({stock, initial}) => {
-    //logica
 
     const [count, setCount] = useState(initial);
     const [contar, setStock] = useState(stock);

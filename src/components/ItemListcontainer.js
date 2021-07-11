@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import {getData} from './getItems'
+import {useParams} from 'react-router-dom';
 
-
-function ItemListcontainer(a){
-
+function ItemListcontainer(){
+   
     const [curso, setCurso] = useState([]);
-    
-
+    let a = useParams()
+    a = a.categoria
         try{ useEffect(() => {
             
             const data = async () => {
@@ -23,7 +23,7 @@ function ItemListcontainer(a){
                         };
                     });
                     setCurso(aux);
-                }, 2000)
+                }, 1000)
             }
             setCurso([])
             data([])

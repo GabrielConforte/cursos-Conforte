@@ -15,11 +15,11 @@ function Navegacion(){
                 <Navbar.Collapse id='responsive-navbar-nav'>
                   <Nav>
                     <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/Programing">Programacion</Nav.Link>
-                    <Nav.Link href="/Desing">Diseño</Nav.Link>
-                    <Nav.Link href="/Marketing">Marketing</Nav.Link>
-                    <Nav.Link href="/SelfImp">Desarrollo Personal</Nav.Link>
-                    <Nav.Link href="/Cart"><CartWidget/></Nav.Link>
+                    <Nav.Link href="/programing">Programacion</Nav.Link>
+                    <Nav.Link href="/design">Diseño</Nav.Link>
+                    <Nav.Link href="/marketing">Marketing</Nav.Link>
+                    <Nav.Link href="/selfimp">Desarrollo Personal</Nav.Link>
+                    <Nav.Link href="/cart"><CartWidget/></Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -13,7 +13,6 @@ function Cart() {
       <Router>
     <h1>Tu carrito</h1>
       <Link href="/Checkout"><button>Comprar</button></Link>
-      
         <Switch>
             <Route path="/Checkout">
                 <Checkout/>

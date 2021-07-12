@@ -32,7 +32,7 @@ function ItemListcontainer(){
 return(
     <div>
         {curso.length > 0 ? <ItemList curso={curso}></ItemList> :
-            <h2><img src="https://cdn.dribbble.com/users/563824/screenshots/3633228/untitled-5.gif"></img></h2>}
+            <h2><img className="img-fluid"alt="loading" src="https://cdn.dribbble.com/users/563824/screenshots/3633228/untitled-5.gif"></img></h2>}
     </div>
 )
 }catch(e){

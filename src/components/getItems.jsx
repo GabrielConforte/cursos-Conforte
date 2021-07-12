@@ -2,7 +2,7 @@
 export async function getData(a) {
     const response = await fetch('https://60e3b3496c365a0017839363.mockapi.io/cursos/conforte/Cursos')
     let data = await response.json()
-    if(a === 'home'){
+    if(a === undefined){
         
         return data;
         

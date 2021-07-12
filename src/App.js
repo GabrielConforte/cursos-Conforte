@@ -24,7 +24,8 @@ function App() {
           <Row>
                     <Switch>
                     <Route exact path="/">
-                                 <Home></Home>
+                                <Home/>
+                                <ItemListcontainer/>
                             </Route>
                             <Route path="/itemDetailsContainer/:id">
                                 <ItemDetailsContainer/>

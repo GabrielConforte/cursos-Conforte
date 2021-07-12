@@ -27,7 +27,7 @@ function ItemListcontainer(){
             }
             setCurso([])
             data([])
-        },[]);
+        },[a]);
 
 return(
     <div>

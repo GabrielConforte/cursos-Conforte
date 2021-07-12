@@ -14,7 +14,7 @@ function ItemDetailsContainer(){
               setCurso(sata)
           }
           data([])
-      },[]);
+      },[id]);
        
       return(
         <div>

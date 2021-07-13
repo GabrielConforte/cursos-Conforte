@@ -16,6 +16,7 @@ function ItemDetailsContainer(){
           data([])
       },[id]);
        
+      
       return(
         <div>
           {

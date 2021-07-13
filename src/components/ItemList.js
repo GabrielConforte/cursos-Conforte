@@ -3,6 +3,7 @@ import Tarjeta from './Tarjeta'
 function ItemList(curso){
 
     return(
+        
             <div className="container">
                 <div className="row">
                     {curso.curso.map((item, index) => {

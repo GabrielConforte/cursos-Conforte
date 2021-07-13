@@ -7,7 +7,6 @@ const ItemDetail = (item) => {
 
 const [qAdd, setQadd] = useState(0)
 
-
 const {imagen, titulo, texto, price} = item
 
 const onAdd = (e) =>{
@@ -24,6 +23,7 @@ const onAdd = (e) =>{
                                 <Card.Img src={imagen}/>
                             </Card.Body>
                     </Card>
+                    
                     <Card className="col-sm-6">
                             <Card.Body>
                                 <Card.Title>{titulo}</Card.Title>

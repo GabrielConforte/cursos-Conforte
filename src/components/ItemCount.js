@@ -9,6 +9,7 @@ const ItemCount = ({stock, initial = 1, onAdd}) => {
         setCantidad(newCantidad)
     }
     function lessToCount() {
+    
         let newCantidad = parseInt(cantidad) -1
         setCantidad(newCantidad)
     }

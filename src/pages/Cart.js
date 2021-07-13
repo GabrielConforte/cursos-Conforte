@@ -12,9 +12,9 @@ function Cart() {
     <div className="App-body">
       <Router>
     <h1>Tu carrito</h1>
-      <Link href="/Checkout"><button>Comprar</button></Link>
+      <Link to="/Checkout"><button>Comprar</button></Link>
         <Switch>
-            <Route path="/Checkout">
+            <Route exact path="/Checkout">
                 <Checkout/>
             </Route>
         </Switch>

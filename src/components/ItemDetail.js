@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Card } from 'react-bootstrap'
 import ItemCount from './ItemCount'
+import { Link } from 'react-router-dom'
 
 const ItemDetail = (item) => {
 
-const {imagen, titulo, texto} = item
+const [qAdd, setQadd] = useState(0)
+
+
+const {imagen, titulo, texto, price} = item
+
+const onAdd = (e) =>{
+    setQadd(e)
+}
 
     return(
         <div>
@@ -20,8 +28,11 @@ const {imagen, titulo, texto} = item
                             <Card.Body>
                                 <Card.Title>{titulo}</Card.Title>
                                 <Card.Text>{texto}</Card.Text>
-                                <button className="btn btn-primary sm">COMPRA YA!</button>
-                                <ItemCount stock={10} initial={0}></ItemCount>
+                               
+                                <ItemCount stock={price} onAdd={onAdd}/>
+
+                                {qAdd > 0 ?  <Link to={'/cart'}><button id="compra" className="m-1 btn btn-primary sm">COMPRAR</button></Link> : <div> </div>}
+
                             </Card.Body>
                     </Card>
                 </div>

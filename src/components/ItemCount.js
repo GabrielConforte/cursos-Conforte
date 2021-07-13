@@ -1,36 +1,33 @@
-import React, { useState } from 'react';
+import { useState } from 'react'
 
-const ItemCount = ({stock, initial}) => {
-
-    const [count, setCount] = useState(initial);
-    const [contar, setStock] = useState(stock);
-
-    const addCount = () => {
-        if( count < contar){
-            setCount(count +1);
-        }
+const ItemCount = ({stock, initial = 1, onAdd}) => {
+    const [cantidad, setCantidad] = useState(initial)
+    // funcionamiento de los botones
+    function increment() {
+        
+        let newCantidad = parseInt(cantidad) +1
+        setCantidad(newCantidad)
     }
-
-    const lessCount = () =>{
-        if(count > 0){
-            setCount(count -1)
-        }
+    function decrement() {
+        let newCantidad = parseInt(cantidad) -1
+        setCantidad(newCantidad)
     }
-
-    const onAdd = () =>{
-        setCount(0)
-        setStock(contar-count)
-    }
-
+    
+    // vista
     return(
         <div>
-           <div> <button onClick={(addCount)}>+</button>
-            {count}
-            <button onClick={(lessCount)}>-</button>
-            <button onClick={(onAdd)}>Agregar al Carrito</button></div>
-            
+            <div>
+                <button
+                onClick={() => decrement()}
+                disabled={cantidad<=initial}>-</button>
+                {cantidad}
+                <button
+                onClick={() => increment()}
+                disabled={cantidad>=stock}>+</button>
+                <button className="m-1"type="submit" onClick={() => onAdd(cantidad)} value={cantidad}>Agregar al Carrito</button>
+            </div>
+           
         </div>
     )
 }
-
-export default ItemCount;
+export default ItemCount

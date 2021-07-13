@@ -12,6 +12,7 @@ import Home from './pages/Home';
 import { Container, Row } from 'react-bootstrap';
 import ItemDetailsContainer from './components/ItemDetailsContainer';
 import ItemListcontainer from './components/ItemListcontainer';
+import Cart from './pages/Cart';
 
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
                             <Route path="/:categoria">
                                 <ItemListcontainer/>
                             </Route>
+                            <Route path='/cart'>
+					<Cart/>
+        </Route>
                         </Switch>
                   </Row>
         </Container>

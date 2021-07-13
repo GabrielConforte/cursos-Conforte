@@ -3,12 +3,12 @@ import { useState } from 'react'
 const ItemCount = ({stock, initial = 1, onAdd}) => {
     const [cantidad, setCantidad] = useState(initial)
     // funcionamiento de los botones
-    function increment() {
+    function addToCount() {
         
         let newCantidad = parseInt(cantidad) +1
         setCantidad(newCantidad)
     }
-    function decrement() {
+    function lessToCount() {
         let newCantidad = parseInt(cantidad) -1
         setCantidad(newCantidad)
     }
@@ -18,11 +18,11 @@ const ItemCount = ({stock, initial = 1, onAdd}) => {
         <div>
             <div>
                 <button
-                onClick={() => decrement()}
+                onClick={() => lessToCount()}
                 disabled={cantidad<=initial}>-</button>
                 {cantidad}
                 <button
-                onClick={() => increment()}
+                onClick={() => addToCount()}
                 disabled={cantidad>=stock}>+</button>
                 <button className="m-1"type="submit" onClick={() => onAdd(cantidad)} value={cantidad}>Agregar al Carrito</button>
             </div>

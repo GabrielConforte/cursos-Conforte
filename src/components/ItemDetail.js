@@ -23,7 +23,7 @@ const onAdd = (e) =>{
                                 <Card.Img src={imagen}/>
                             </Card.Body>
                     </Card>
-                    
+
                     <Card className="col-sm-6">
                             <Card.Body>
                                 <Card.Title>{titulo}</Card.Title>
@@ -31,7 +31,7 @@ const onAdd = (e) =>{
                                
                                 <ItemCount stock={price} onAdd={onAdd}/>
 
-                                {qAdd > 0 ?  <Link to={'/cart'}><button id="compra" className="m-1 btn btn-primary sm">COMPRAR</button></Link> : <div> </div>}
+                                {qAdd > 0 ?  <Link to='/cart'><button id="compra" className="m-1 btn btn-primary sm">COMPRAR</button></Link> : <div> </div>}
 
                             </Card.Body>
                     </Card>

@@ -35,8 +35,8 @@ function App() {
                                 <ItemListcontainer/>
                             </Route>
                             <Route path='/cart'>
-					<Cart/>
-        </Route>
+                              <Cart/>
+                            </Route>
                         </Switch>
                   </Row>
         </Container>

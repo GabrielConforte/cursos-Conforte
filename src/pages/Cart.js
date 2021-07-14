@@ -14,7 +14,7 @@ function Cart() {
     <h1>Tu carrito</h1>
       <Link to="/Checkout"><button>Comprar</button></Link>
         <Switch>
-            <Route exact path="/Checkout">
+            <Route path="/Checkout">
                 <Checkout/>
             </Route>
         </Switch>

@@ -28,15 +28,16 @@ function App() {
                                 <Home/>
                                 <ItemListcontainer/>
                             </Route>
+                            <Route path='/cart'>
+                              <Cart/>
+                            </Route>
                             <Route path="/itemDetailsContainer/:id">
                                 <ItemDetailsContainer/>
                             </Route>
                             <Route path="/:categoria">
                                 <ItemListcontainer/>
                             </Route>
-                            <Route path='/cart'>
-                              <Cart/>
-                            </Route>
+                            
                         </Switch>
                   </Row>
         </Container>

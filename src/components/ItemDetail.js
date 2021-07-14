@@ -29,9 +29,9 @@ const onAdd = (e) =>{
                                 <Card.Title>{titulo}</Card.Title>
                                 <Card.Text>{texto}</Card.Text>
                                
-                                <ItemCount stock={price} onAdd={onAdd}/>
+                               
 
-                                {qAdd > 0 ?  <Link to='/cart'><button id="compra" className="m-1 btn btn-primary sm">COMPRAR</button></Link> : <div> </div>}
+                                {qAdd > 0 ?  <Link to='/cart'><button id="compra" className="m-1 btn btn-primary sm">COMPRAR</button></Link> : <div> <ItemCount stock={price} onAdd={onAdd}/> </div>}
 
                             </Card.Body>
                     </Card>

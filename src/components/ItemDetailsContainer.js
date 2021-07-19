@@ -21,7 +21,7 @@ function ItemDetailsContainer(){
         <div>
           {
 
-           <ItemDetail imagen={curso.image} titulo={curso.tittle} texto={curso.text}></ItemDetail>
+           <ItemDetail imagen={curso.image} titulo={curso.tittle} texto={curso.text} price={curso.price} id={curso.id}></ItemDetail>
             
           }
         </div>

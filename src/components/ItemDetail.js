@@ -1,16 +1,39 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { Card } from 'react-bootstrap'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom'
+import { CartContext } from './cartContext';
 
 const ItemDetail = (item) => {
 
+const context = useContext(CartContext)
+const cart = context.cartData
 const [qAdd, setQadd] = useState(0)
 
-const {imagen, titulo, texto, price} = item
+const {imagen, titulo, texto, price, id} = item
 
-const onAdd = (e) =>{
+function onAdd(e){
     setQadd(e)
+    
+    const createItem = {
+        titulo: titulo,
+        imagen: imagen,
+        price: price,
+        cantidad: e,
+        id: id
+    }
+    
+    if(cart.length===0){
+        context.setCartData([createItem])
+    }else{
+       let a = cart.find((i) => i.id === createItem.id)
+       if(a===undefined){context.setCartData([...cart, createItem])
+    }else{
+        alert("Ya esta en el carrito")
+    }
+        
+        }
+   
 }
 
     return(
@@ -28,7 +51,7 @@ const onAdd = (e) =>{
                             <Card.Body>
                                 <Card.Title>{titulo}</Card.Title>
                                 <Card.Text>{texto}</Card.Text>
-                               
+                             
                                
 
                                 {qAdd > 0 ?  <Link to='/cart'><button id="compra" className="m-1 btn btn-primary sm">COMPRAR</button></Link> : <div> <ItemCount stock={price} onAdd={onAdd}/> </div>}
@@ -41,6 +64,7 @@ const onAdd = (e) =>{
     );
 
 } 
-
-
+//
+//setFruits([...fruits, 'Manzana'])
+//setFruits(fruits.concat('Manzana'))
 export default ItemDetail;

@@ -3,7 +3,9 @@
 import React from 'react'
 import CartWidget from './CartWidget'
 import { Navbar, Nav, Container } from 'react-bootstrap';
-
+import {
+ Link
+} from "react-router-dom";
 
 
 function Navegacion(){
@@ -14,12 +16,12 @@ function Navegacion(){
                 <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>
                   <Nav>
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/programing">Programacion</Nav.Link>
-                    <Nav.Link href="/design">Diseño</Nav.Link>
-                    <Nav.Link href="/marketing">Marketing</Nav.Link>
-                    <Nav.Link href="/selfimp">Desarrollo Personal</Nav.Link>
-                    <Nav.Link href="/cart"><CartWidget/></Nav.Link>
+                    <Link className="nav-link"  to="/">Home </Link>
+                    <Link className="nav-link" to="/programing"> Programacion </Link>
+                    <Link className="nav-link" to="/design"> Diseño </Link>
+                    <Link className="nav-link" to="/marketing"> Marketing </Link>
+                    <Link className="nav-link" to="/selfimp"> Desarrollo Personal </Link>
+                    <Link className="nav-link" to="/cart"><CartWidget/></Link>
                   </Nav>
                 </Navbar.Collapse>
             </Container>

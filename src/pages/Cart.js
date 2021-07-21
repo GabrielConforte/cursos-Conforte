@@ -11,20 +11,21 @@ function Cart() {
 
   const context = useContext(CartContext)
 
- 
   const [cart, setCart] = useState([])
-  
   useEffect(()=>{
+    
     setCart(context.cartData)
+
+    
+
   },[context.cartData]);
 
  
 
   return (
-    <div className="App-body">
-      <Router>
+    <div className="App-body"> {context.cartData.length !== 0 ?
+    <Router>
     <h1>Tu carrito</h1>
-    {}
     <ul className="row justify-content-start">
       {cart.map((curso) => (
         <li className="col-4" key={curso.id}>
@@ -53,7 +54,9 @@ function Cart() {
                 <Checkout/>
             </Route>
         </Switch>
-    </Router>
+    </Router> : <div><div> Tu carrito esta Vacio </div>
+                <div><Link to="/"><button className="btn btn-primary">Vamos alla!</button></Link></div></div>}
+     
       </div>
   );
 }

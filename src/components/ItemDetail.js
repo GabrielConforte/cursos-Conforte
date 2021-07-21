@@ -9,12 +9,18 @@ const ItemDetail = (item) => {
 const context = useContext(CartContext)
 const cart = context.cartData
 const [qAdd, setQadd] = useState(0)
+const [st, setSt] = useState(10)//esto despues deberia agregarlo al context para uqe no se reinicie cada rato
 
 const {imagen, titulo, texto, price, id} = item
 
 function onAdd(e){
     setQadd(e)
     
+    let aux2 = st - e
+    setSt(aux2)
+   
+    console.log("el stock es " + aux2) 
+
     const createItem = {
         titulo: titulo,
         imagen: imagen,
@@ -51,10 +57,8 @@ function onAdd(e){
                             <Card.Body>
                                 <Card.Title>{titulo}</Card.Title>
                                 <Card.Text>{texto}</Card.Text>
-                             
-                               
 
-                                {qAdd > 0 ?  <Link to='/cart'><button id="compra" className="m-1 btn btn-primary sm">COMPRAR</button></Link> : <div> <ItemCount stock={price} onAdd={onAdd}/> </div>}
+                                {qAdd > 0 ?  <Link to='/cart'><button id="compra" className="m-1 btn btn-primary sm">COMPRAR</button></Link> : <div><ItemCount stock={st} onAdd={onAdd}/> </div>}
 
                             </Card.Body>
                     </Card>

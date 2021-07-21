@@ -8,7 +8,7 @@ function ItemListcontainer(){
     const [curso, setCurso] = useState([]);
     let a = useParams()
     a = a.categoria
-        try{ useEffect(() => {
+        useEffect(() => {
             
             const data = async () => {
                 const data = await getData(a);
@@ -35,9 +35,7 @@ return(
             <h2><img className="img-fluid"alt="loading" src="https://cdn.dribbble.com/users/563824/screenshots/3633228/untitled-5.gif"></img></h2>}
     </div>
 )
-}catch(e){
-    console.log(e)
-}
+
    
 }
 

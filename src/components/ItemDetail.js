@@ -44,16 +44,16 @@ function onAdd(e){
 
     return(
         <div>
-            <div className="container ">
-                <div className="row">
+            <div className="container m-2">
+                <div className="row d-flex justify-content-center">
                     
-                    <Card className="col-sm-6">
+                    <Card className="col-sm-6 m-1">
                             <Card.Body>
                                 <Card.Img src={imagen}/>
                             </Card.Body>
                     </Card>
 
-                    <Card className="col-sm-6">
+                    <Card className="col-sm-6 m-1">
                             <Card.Body>
                                 <Card.Title>{titulo}</Card.Title>
                                 <Card.Text>{texto}</Card.Text>

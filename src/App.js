@@ -14,6 +14,9 @@ import ItemDetailsContainer from './components/ItemDetailsContainer';
 import ItemListcontainer from './components/ItemListcontainer';
 import Cart from './pages/Cart';
 import { CartContext } from './components/cartContext';
+import 'bootswatch/dist/quartz/bootstrap.min.css'
+
+import './firebase';
 
 function App() {
  const [cartData,setCartData]=useState([])

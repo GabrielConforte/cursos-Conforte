@@ -1,7 +1,11 @@
-import * as firebase from 'firebase/app'
+
+import firebase from 'firebase/app'
+import 'firebase/storage'
 import 'firebase/firestore'
 
-const firebase = {
+// Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
     apiKey: "AIzaSyCaDLbrvRoGnGg6xZ-vN9FHUs37MHwgO4k",
     authDomain: "cursos-conforte.firebaseapp.com",
     projectId: "cursos-conforte",
@@ -10,9 +14,14 @@ const firebase = {
     appId: "1:789256180492:web:dc378113551c6297e6af29",
     measurementId: "G-T9ZMM4S6BH"
   };
+  // Initialize Firebase
+  const fb = firebase.initializeApp(firebaseConfig);
 
-  const app = firebase.initializeApp(firebaseConfig);
+  const db = fb.firestore();
 
-  export function getFirestore(){
-      return firebase.firestore(app)
-  }
+  db.settings({timespampsInSnapshots:true, merge: true })
+
+  
+
+  export default db;
+

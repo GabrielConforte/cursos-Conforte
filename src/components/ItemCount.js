@@ -21,14 +21,14 @@ const ItemCount = ({stock, initial = 1, onAdd}) => {
     return(
         <div>
             <div>
-                <button
+                <button className="btn btn-primary m-1"
                 onClick={() => lessToCount()}
                 disabled={cant<=initial}>-</button>
                 {cant}
-                <button
+                <button className="btn btn-primary m-1"
                 onClick={() => addToCount()}
                 disabled={cant>=st}>+</button>
-                <button className="m-1"type="submit" onClick={() => onAdd(cant)} value={cant}>Agregar al Carrito</button>
+                <button className="btn btn-primary m-1" type="submit" onClick={() => onAdd(cant)} value={cant}>Agregar al Carrito</button>
             </div>
            
         </div>

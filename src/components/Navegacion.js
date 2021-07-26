@@ -1,6 +1,7 @@
 /////
 
-import React from 'react'
+import React, { useContext } from 'react'
+import { CartContext } from './cartContext';
 import CartWidget from './CartWidget'
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import {
@@ -8,7 +9,13 @@ import {
 } from "react-router-dom";
 
 
+
 function Navegacion(){
+
+  const context = useContext(CartContext)
+  let a = context.cartData.length
+  console.log(a)
+
     return (
       <>
           <Navbar collapseOnSelect expand='sm' bg='dark' variant="dark">
@@ -21,7 +28,7 @@ function Navegacion(){
                     <Link className="nav-link" to="/design"> Diseño </Link>
                     <Link className="nav-link" to="/marketing"> Marketing </Link>
                     <Link className="nav-link" to="/selfimp"> Desarrollo Personal </Link>
-                    <Link className="nav-link" to="/cart"><CartWidget/></Link>
+                   {a>0 ? <Link className="nav-link" to="/cart"><CartWidget/> </Link>: <div> </div>}
                   </Nav>
                 </Navbar.Collapse>
             </Container>

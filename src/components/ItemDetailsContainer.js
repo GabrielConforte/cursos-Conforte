@@ -1,12 +1,63 @@
 import React, { useEffect, useState } from 'react';
-import {getDataID} from './getItems'
 import ItemDetail from './ItemDetail';
+import db from '../firebase/index'
 import {useParams} from 'react-router-dom';
 
 function ItemDetailsContainer(){
   const [curso, setCurso] = useState([]);
+  const [loading, setLoading] = useState([])
     
-    const id = useParams()
+    const b = useParams()
+    
+    useEffect(() => {
+      setTimeout(() => {
+          const itemCollection = db.collection('items')
+          let item = undefined;
+          
+          if(b!==undefined){
+              item = itemCollection.where('id','==',b.id)
+          }else{
+              item = itemCollection
+          }
+          
+          item.get().then((querySnapshot) => {
+              if(querySnapshot.size === 0){
+                  console.log("no resultado")
+              }else{
+                  setCurso(querySnapshot.docs.map(doc => {
+                         return {
+                              id:doc.id,
+                              categoria:doc.data().categoria,
+                              tittle:doc.data().tittle,
+                              text:doc.data().text,
+                              image:doc.data().image,
+                              price:doc.data().price}}))
+              }
+          }).catch(error => {console.log("error", error)
+          }).finally(()=>{setLoading(false)})}, 1500)
+      },[b]);
+       
+      
+      return(
+        <div>
+          {
+          loading === false ?
+          <ItemDetail imagen={curso[0].image} titulo={curso[0].tittle} texto={curso[0].text} price={curso[0].price} id={curso[0].id}></ItemDetail> :
+          <div className="container"><div className="row">
+
+            <div className="progress m-2 App-body col"></div>
+
+           </div>
+            </div>
+          }
+        </div>
+      )
+}
+
+export default ItemDetailsContainer;
+
+/*
+const id = useParams()
     
      useEffect(() => {
           const data = async () => {
@@ -14,18 +65,4 @@ function ItemDetailsContainer(){
               setCurso(sata)
           }
           data([])
-      },[id]);
-       
-      
-      return(
-        <div>
-          {
-
-           <ItemDetail imagen={curso.image} titulo={curso.tittle} texto={curso.text} price={curso.price} id={curso.id}></ItemDetail>
-            
-          }
-        </div>
-      )
-}
-
-export default ItemDetailsContainer;
+      },[id]);*/

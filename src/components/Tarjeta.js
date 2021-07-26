@@ -3,9 +3,10 @@ import { Card, Button } from 'react-bootstrap';
 import {Link} from "react-router-dom";
 
 const Tarjeta = ({ img, tittle, id, price }) => {
-    
+
+
     return (
-        <div>
+        <div className="m-2">
             <Card>
                 <Card.Img className="imagen" variant="top" src={img} />
                 <Card.Body>

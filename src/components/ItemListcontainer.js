@@ -29,7 +29,8 @@ function ItemListcontainer(){
                                     categoria:doc.data().categoria,
                                     tittle:doc.data().tittle,
                                     text:doc.data().text,
-                                    image:doc.data().image}}))
+                                    image:doc.data().image,
+                                    price:doc.data().price}}))
                     }
                 }).catch(error => {console.log("error", error)
                 }).finally(()=>{setLoading(false)})}, 1500)

@@ -5,7 +5,7 @@ function ItemList(curso){
 
     return(
         
-            <div className="container">
+            <div className="container">{console.log(curso)}
                 <div className="row">
                     {curso.curso.map((item, index) => {
     return(

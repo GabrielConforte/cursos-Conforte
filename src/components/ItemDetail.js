@@ -9,36 +9,35 @@ const ItemDetail = (item) => {
 const context = useContext(CartContext)
 const cart = context.cartData
 const [qAdd, setQadd] = useState(0)
-const [st, setSt] = useState(10)//esto despues deberia agregarlo al context para uqe no se reinicie cada rato
-
-const {imagen, titulo, texto, price, id} = item
+const {imagen, titulo, texto, price, id,stock} = item
+const [st, setSt] = useState(stock)
 
 function onAdd(e){
     setQadd(e)
     
-    let aux2 = st - e
-    setSt(aux2)
+    let aux = st - e
+    setSt(aux)
    
-    console.log("el stock es " + aux2) 
+    console.log("el stock es " + aux) 
 
     const createItem = {
         titulo: titulo,
         imagen: imagen,
         price: price,
         cantidad: e,
-        id: id
+        id: id,
+        stock: stock
     }
     
     if(cart.length===0){
         context.setCartData([createItem])
-    }else{
-       let a = cart.find((i) => i.id === createItem.id)
-       if(a===undefined){context.setCartData([...cart, createItem])
-    }else{
-        alert("Ya esta en el carrito")
-    }
-        
+        }else{
+            let a = cart.find((i) => i.id === createItem.id)
+            if(a===undefined){context.setCartData([...cart, createItem])
+            }else{
+                alert("Ya esta en el carrito")
         }
+    }
    
 }
 

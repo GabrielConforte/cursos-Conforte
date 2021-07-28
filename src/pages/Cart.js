@@ -56,7 +56,7 @@ function Cart() {
                className="btn btn-warning m-1">Limpiar</button></div> 
         <Switch>
             <Route path="/Checkout">
-                <Checkout/>
+                <Checkout total={suma}/>
             </Route>
         </Switch>
     </Router> : <div className="App-body"><div> Tu carrito esta Vacio </div>

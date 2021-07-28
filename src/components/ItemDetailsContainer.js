@@ -31,7 +31,8 @@ function ItemDetailsContainer(){
                               tittle:doc.data().tittle,
                               text:doc.data().text,
                               image:doc.data().image,
-                              price:doc.data().price}}))
+                              price:doc.data().price,
+                            stock:doc.data().stock}}))
               }
           }).catch(error => {console.log("error", error)
           }).finally(()=>{setLoading(false)})}, 1500)
@@ -42,7 +43,7 @@ function ItemDetailsContainer(){
         <div>
           {
           loading === false ?
-          <ItemDetail imagen={curso[0].image} titulo={curso[0].tittle} texto={curso[0].text} price={curso[0].price} id={curso[0].id}></ItemDetail> :
+          <ItemDetail imagen={curso[0].image} titulo={curso[0].tittle} texto={curso[0].text} price={curso[0].price} id={curso[0].id} stock={curso[0].stock}></ItemDetail> :
           <div className="container">
             <div className="row">
               <div className="progress m-2 App-body"></div>

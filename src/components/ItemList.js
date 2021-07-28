@@ -9,7 +9,7 @@ function ItemList(curso){
                 <div className="row">
                     {curso.curso.map((item, index) => {
     return(
-        <div className="col-6" key={index}>
+        <div className="col-sm-12 col-lg-6" key={index}>
             <Tarjeta img={item.image} tittle={item.tittle} price={item.price} id={item.id}/>
         </div>
     )

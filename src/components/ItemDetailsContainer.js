@@ -4,7 +4,7 @@ import db from '../firebase/index'
 import {useParams} from 'react-router-dom';
 
 function ItemDetailsContainer(){
-  const [curso, setCurso] = useState([]);
+  const [curso, setCurso] = useState();
   const [loading, setLoading] = useState([])
     
     const b = useParams()
@@ -43,12 +43,11 @@ function ItemDetailsContainer(){
           {
           loading === false ?
           <ItemDetail imagen={curso[0].image} titulo={curso[0].tittle} texto={curso[0].text} price={curso[0].price} id={curso[0].id}></ItemDetail> :
-          <div className="container"><div className="row">
-
-            <div className="progress m-2 App-body col"></div>
-
-           </div>
+          <div className="container">
+            <div className="row">
+              <div className="progress m-2 App-body"></div>
             </div>
+          </div>
           }
         </div>
       )

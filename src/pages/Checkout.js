@@ -1,7 +1,7 @@
 import React, {useState, useContext} from "react";
 import { Form } from 'react-bootstrap';
 import db from '../firebase/index'
-import { CartContext } from "../components/cartContext";
+import { CartContext } from "../context/cartContext";
 
 function Checkout(suma) {
 

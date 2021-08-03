@@ -5,7 +5,7 @@ import {
   Route,Link,
 } from "react-router-dom";
 import Checkout from "./Checkout";
-import { CartContext } from '../components/cartContext';
+import {CartContext } from "../context/cartContext"
 
 function Cart() {
 
@@ -15,9 +15,7 @@ function Cart() {
   let con = context.cartData
   let suma = 0;
   con.forEach (function(con){
-    
     suma += (con.cantidad*con.price)
-    
   });
 
   useEffect(()=>{
@@ -29,27 +27,39 @@ function Cart() {
     <Router>
     <h1>Tu carrito</h1>
     <div className="row">
+      <table className="table">
+              <thead>
+                <tr>
+                  <th scope="col"> </th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Valor</th>
+                  <th scope="col">Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
       {cart.map((curso) => (
+        <>
+              
+                <tr key={curso.id}>
+                    <th scope="row"></th>
+                    <td>{curso.titulo}</td>
+                    <td>x{curso.cantidad}</td>
+                    <td>${curso.price*curso.cantidad}</td>
+                    <td>
+                        <button onClick={()=>{
+                          let a = context.cartData.filter((id) => id.id !== curso.id)
+                          context.setCartData(a)
+                        }}className="btn btn-danger btn-sm">Eliminar</button>
+                        
+                    </td>
+                </tr>
 
-        <div className="col-md-3" key={curso.id}>
-          <div className="card">
-            <div><img className="card-img-top"alt="placeholder img" src={curso.imagen}></img></div>
-            <div className="card-body">
-            <ul className="list-group list-group-flush">
-                <li className="list-group-item fs-5">{curso.titulo}</li>
-                <li className="list-group-item fs-5">X {curso.cantidad}</li>
-                <li className="list-group-item">
-                <button onClick={()=>{
-                  let a = context.cartData.filter((id) => id.id !== curso.id)
-                  context.setCartData(a)
-              }}className="btn btn-danger">Eliminar</button></li>
-           </ul>
-          </div></div>
-        </div>
-        
-      ))}
+        </>
+      ))}</tbody>
+      </table>
     </div>
-        <div> <hr></hr><h4> El total de su compra es: ${suma} </h4> <hr></hr>
+        <div><h4> El total de su compra es: ${suma} </h4> <hr></hr>
       <Link to="/Checkout"><button className="btn btn-primary m-1">Comprar</button></Link>
                             <button  onClick={()=>{
               context.setCartData([])}}
@@ -67,3 +77,7 @@ function Cart() {
 }
 
 export default Cart;
+
+
+/** */
+/** */

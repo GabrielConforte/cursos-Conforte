@@ -13,16 +13,16 @@ import { Container, Row } from 'react-bootstrap';
 import ItemDetailsContainer from './components/ItemDetailsContainer';
 import ItemListcontainer from './components/ItemListcontainer';
 import Cart from './pages/Cart';
-import { CartContext } from './components/cartContext';
+import { CartContext } from "./context/cartContext"
 import 'bootswatch/dist/quartz/bootstrap.min.css'
 
 import './firebase';
 
 function App() {
- const [cartData,setCartData]=useState([])
-
+  const [cartData,setCartData]=useState([])
+  const [count, setCount]=useState(0)
   return (
-  <CartContext.Provider value={{cartData,setCartData}}>
+  <CartContext.Provider value={{cartData,setCartData,count,setCount}}>
     <Router>
       <Navegacion/>
         <div className="App">

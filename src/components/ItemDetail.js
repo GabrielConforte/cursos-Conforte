@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react';
 import { Card } from 'react-bootstrap'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom'
-import { CartContext } from './cartContext';
+import {CartContext } from "../context/cartContext"
 
 const ItemDetail = (item) => {
 
@@ -35,7 +35,9 @@ function onAdd(e){
             let a = cart.find((i) => i.id === createItem.id)
             if(a===undefined){context.setCartData([...cart, createItem])
             }else{
-                alert("Ya esta en el carrito")
+            let ind = cart.indexOf(a)
+            cart[ind].cantidad+=e
+            console.log(cart[ind].cantidad)
         }
     }
    

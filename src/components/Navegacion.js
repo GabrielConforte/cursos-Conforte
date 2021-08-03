@@ -1,7 +1,7 @@
 /////
 
 import React, { useContext } from 'react'
-import { CartContext } from './cartContext';
+import {CartContext } from "../context/cartContext"
 import CartWidget from './CartWidget'
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import {
@@ -14,7 +14,6 @@ function Navegacion(){
 
   const context = useContext(CartContext)
   let a = context.cartData.length
-  console.log(a)
 
     return (
       <>

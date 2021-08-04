@@ -16,9 +16,10 @@ function onAdd(e){
     setQadd(e)
     
     let aux = st - e
+
+    let counter = context.count + e 
     setSt(aux)
-   
-    console.log("el stock es " + aux) 
+    context.setCount(counter)
 
     const createItem = {
         titulo: titulo,
@@ -33,11 +34,11 @@ function onAdd(e){
         context.setCartData([createItem])
         }else{
             let a = cart.find((i) => i.id === createItem.id)
-            if(a===undefined){context.setCartData([...cart, createItem])
+            if(a===undefined){
+                context.setCartData([...cart, createItem])
             }else{
-            let ind = cart.indexOf(a)
-            cart[ind].cantidad+=e
-            console.log(cart[ind].cantidad)
+                let ind = cart.indexOf(a)
+                cart[ind].cantidad+=e
         }
     }
    

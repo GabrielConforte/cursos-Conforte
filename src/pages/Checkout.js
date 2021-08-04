@@ -91,20 +91,4 @@ function Checkout(suma) {
 }
 
 export default Checkout;
-
-
-/*
-  <button className="col-8 btn btn-primary m-2" type="submit">
-      Enviar Solicitud
-    </button>
-
-    const items = context.cartData.map((curso) => {
-      return {id: curso.id,
-              tittle: curso.tittle,
-              price: curso.price}
-    })
-
-    console.log(items)
-
-    setPedidos(items)
-*/ 
+ 

@@ -14,9 +14,6 @@ const ItemCount = ({stock, initial = 1, onAdd}) => {
         setCant(aux)
     }
 
-
-
-
     
     return(
         <div>

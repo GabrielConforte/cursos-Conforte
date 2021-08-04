@@ -39,45 +39,39 @@ function Cart() {
               </thead>
               <tbody>
       {cart.map((curso) => (
-        <>
-              
                 <tr key={curso.id}>
                     <th scope="row"></th>
-                    <td>{curso.titulo}</td>
+                    <td >{curso.titulo}</td>
                     <td>x{curso.cantidad}</td>
                     <td>${curso.price*curso.cantidad}</td>
                     <td>
                         <button onClick={()=>{
                           let a = context.cartData.filter((id) => id.id !== curso.id)
                           context.setCartData(a)
+                          context.setCount(context.count-curso.cantidad)
                         }}className="btn btn-danger btn-sm">Eliminar</button>
                         
                     </td>
                 </tr>
-
-        </>
       ))}</tbody>
       </table>
     </div>
         <div><h4> El total de su compra es: ${suma} </h4> <hr></hr>
       <Link to="/Checkout"><button className="btn btn-primary m-1">Comprar</button></Link>
                             <button  onClick={()=>{
-              context.setCartData([])}}
+              context.setCartData([])
+              context.setCount(0)}}
                className="btn btn-warning m-1">Limpiar</button></div> 
-        <Switch>
-            <Route path="/Checkout">
-                <Checkout total={suma}/>
-            </Route>
-        </Switch>
-    </Router> : <div className="App-body"><div> Tu carrito esta Vacio </div>
-                <div><Link to="/"><button className="btn btn-primary">Vamos <b>alla!</b></button></Link></div></div>}
+              <Switch>
+                  <Route path="/Checkout">
+                      <Checkout total={suma}/>
+                  </Route>
+              </Switch>
+          </Router> : <div className="App-body"><div> Tu carrito esta Vacio </div>
+                      <div><Link to="/"><button className="btn btn-primary">Vamos <b>alla!</b></button></Link></div></div>}
      
       </div>
   );
 }
 
 export default Cart;
-
-
-/** */
-/** */

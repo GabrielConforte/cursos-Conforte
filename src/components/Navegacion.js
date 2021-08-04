@@ -13,6 +13,7 @@ import {
 function Navegacion(){
 
   const context = useContext(CartContext)
+  console.log(context.count)
   let a = context.cartData.length
 
     return (

@@ -6,15 +6,14 @@ import {useParams} from 'react-router-dom';
 function ItemListcontainer(){
     const [curso, setCurso] = useState([]);
     const [loading, setLoading] = useState(true)
-    let b = useParams()
-    b = b.categoria
+    let {categoria} = useParams()
         useEffect(() => {
             setTimeout(() => {
             
                 const itemCollection = db.collection('items')
                 let item = undefined;
-                if(b!==undefined){
-                    item = itemCollection.where('categoria','==',b)
+                if(categoria!==undefined){
+                    item = itemCollection.where('categoria','==',categoria)
                 }else{
                     item = itemCollection
                 }
@@ -34,7 +33,7 @@ function ItemListcontainer(){
                     }
                 }).catch(error => {console.log("error", error)
                 }).finally(()=>{setLoading(false)})}, 1500)
-            },[b]);
+            },[categoria]);
 return(
     <div>
         {loading === false ? <ItemList curso={curso}></ItemList> :

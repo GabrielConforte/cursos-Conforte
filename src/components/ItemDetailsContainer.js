@@ -7,15 +7,15 @@ function ItemDetailsContainer(){
   const [curso, setCurso] = useState();
   const [loading, setLoading] = useState([])
     
-    const b = useParams()
+    const {id} = useParams()
     
     useEffect(() => {
       setTimeout(() => {
           const itemCollection = db.collection('items')
           let item = undefined;
           
-          if(b!==undefined){
-              item = itemCollection.where('id','==',b.id)
+          if(id!==undefined){
+              item = itemCollection.where('id','==',id)
           }else{
               item = itemCollection
           }
@@ -36,7 +36,7 @@ function ItemDetailsContainer(){
               }
           }).catch(error => {console.log("error", error)
           }).finally(()=>{setLoading(false)})}, 1500)
-      },[b]);
+      },[id]);
        
       
       return(

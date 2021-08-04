@@ -9,7 +9,7 @@ const ItemDetail = (item) => {
 const context = useContext(CartContext)
 const cart = context.cartData
 const [qAdd, setQadd] = useState(0)
-const {imagen, titulo, texto, price, id,stock} = item
+const { imagen, titulo, texto, price, id, stock } = item
 const [st, setSt] = useState(stock)
 
 function onAdd(e){
@@ -39,13 +39,12 @@ function onAdd(e){
             }else{
                 let ind = cart.indexOf(a)
                 cart[ind].cantidad+=e
+            }
         }
     }
-   
-}
 
     return(
-        <div>
+        <>
             <div className="container m-2">
                 <div className="row d-flex justify-content-center">
                     
@@ -56,21 +55,20 @@ function onAdd(e){
                     </Card>
 
                     <Card className="col-sm-6 m-1">
-                            <Card.Body>
-                                <Card.Title>{titulo}</Card.Title>
-                                <Card.Text>{texto}</Card.Text>
-
-                                {qAdd > 0 ?  <Link to='/cart'><button id="compra" className="m-1 btn btn-primary sm">COMPRAR</button></Link> : <div><ItemCount stock={st} onAdd={onAdd}/> </div>}
-
-                            </Card.Body>
+                        <Card.Body>
+                            <Card.Title>{titulo}</Card.Title>
+                            <Card.Text>{texto}</Card.Text>
+                            {qAdd > 0 ?
+                            <Link to='/cart'>
+                                <button id="compra" className="m-1 btn btn-primary sm">COMPRAR</button>
+                            </Link>:
+                                <div><ItemCount stock={st} onAdd={onAdd}/> </div>}
+                        </Card.Body>
                     </Card>
                 </div>
             </div>
-        </div>
-    );
+            </>
+        );
 
-} 
-//
-//setFruits([...fruits, 'Manzana'])
-//setFruits(fruits.concat('Manzana'))
+    } 
 export default ItemDetail;

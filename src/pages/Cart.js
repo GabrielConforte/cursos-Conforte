@@ -57,11 +57,13 @@ function Cart() {
       </table>
     </div>
         <div><h4> El total de su compra es: ${suma} </h4> <hr></hr>
-      <Link to="/Checkout"><button className="btn btn-primary m-1">Comprar</button></Link>
-                            <button  onClick={()=>{
-              context.setCartData([])
-              context.setCount(0)}}
-               className="btn btn-warning m-1">Limpiar</button></div> 
+      <Link to="/Checkout">
+                            <button className="btn btn-primary m-1">Comprar</button></Link>
+                            <button onClick={()=>{
+                                context.setCartData([])
+                                context.setCount(0)}}
+                                className="btn btn-warning m-1">Limpiar
+                            </button></div> 
               <Switch>
                   <Route path="/Checkout">
                       <Checkout total={suma}/>

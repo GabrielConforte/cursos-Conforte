@@ -7,7 +7,7 @@ function ItemDetailsContainer(){
   const [curso, setCurso] = useState();
   const [loading, setLoading] = useState([])
     
-    const {id} = useParams()
+    const { id } = useParams()
     
     useEffect(() => {
       setTimeout(() => {

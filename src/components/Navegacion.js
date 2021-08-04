@@ -13,7 +13,7 @@ import {
 function Navegacion(){
 
   const context = useContext(CartContext)
-  console.log(context.count)
+
   let a = context.cartData.length
 
     return (
@@ -23,12 +23,12 @@ function Navegacion(){
                 <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>
                   <Nav>
-                    <Link className="nav-link"  to="/">Home </Link>
+                    <Link className="nav-link"  to="/"> Home </Link>
                     <Link className="nav-link" to="/programing"> Programacion </Link>
                     <Link className="nav-link" to="/design"> Diseño </Link>
                     <Link className="nav-link" to="/marketing"> Marketing </Link>
                     <Link className="nav-link" to="/selfimp"> Desarrollo Personal </Link>
-                   {a>0 ? <Link className="nav-link" to="/cart"><CartWidget/> </Link>: <div> </div>}
+                    { a>0 ? <Link className="nav-link" to="/cart"><CartWidget/> </Link> : <></> }
                   </Nav>
                 </Navbar.Collapse>
             </Container>

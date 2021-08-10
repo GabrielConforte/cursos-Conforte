@@ -9,7 +9,7 @@ const context = useContext(CartContext)
 
     return(
         <div>
-          <button className="btn btn-success btn-sm">
+          <button className="btn btn-primary btn-sm">
             <svg xmlns="http://www.w3.org/200/svg" width="16" height="16"
             fill="white" className=" bi-cart" viewBox="0 0 16 22">
               <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1

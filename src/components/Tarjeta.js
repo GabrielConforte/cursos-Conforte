@@ -12,7 +12,7 @@ const Tarjeta = ({ img, tittle, id, price }) => {
                 <Card.Body>
                     <Card.Title>{tittle}</Card.Title>
                     <Card.Text>${price}</Card.Text>
-                    <Link to={`/itemDetailsContainer/${id}`}>
+                    <Link to={`/item/${id}`}>
                         <Button variant="primary">Detalle</Button>
                     </Link>
                 </Card.Body>

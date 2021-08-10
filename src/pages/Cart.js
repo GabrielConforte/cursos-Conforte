@@ -6,11 +6,13 @@ import {
 } from "react-router-dom";
 import Checkout from "./Checkout";
 import {CartContext } from "../context/cartContext"
+import {auth} from '../firebase/index';
 
 function Cart() {
 
   const context = useContext(CartContext)
   const [cart, setCart] = useState([])
+  const [comprobar, setComprobar] = useState(false)
 
   let con = context.cartData
   let suma = 0;
@@ -20,6 +22,11 @@ function Cart() {
 
   useEffect(()=>{
     setCart(context.cartData)
+    auth.onAuthStateChanged((user)=>{
+      if(user){
+        setComprobar(true)
+      }
+    })
     },[context.cartData]);
 
   return (
@@ -57,19 +64,20 @@ function Cart() {
       </table>
     </div>
         <div><h4> El total de su compra es: ${suma} </h4> <hr></hr>
-      <Link to="/Checkout">
-                            <button className="btn btn-primary m-1">Comprar</button></Link>
+                       {comprobar ? <Link to="/Checkout">
+                            <button className="btn-violeta m-1">Comprar</button></Link> : <button disabled={!comprobar}className="btn-inactivo m-1">Para comprar Inicia Sesion</button>}
                             <button onClick={()=>{
                                 context.setCartData([])
                                 context.setCount(0)}}
-                                className="btn btn-warning m-1">Limpiar
+                                
+                                className="btn-violeta m-1">Limpiar
                             </button></div> 
               <Switch>
                   <Route path="/Checkout">
                       <Checkout total={suma}/>
                   </Route>
               </Switch>
-          </Router> : <div className="App-body"><div> Tu carrito esta Vacio </div>
+              </Router> : <div className="App-body"><div> Tu carrito esta Vacio </div>
                       <div><Link to="/"><button className="btn btn-primary">Vamos <b>alla!</b></button></Link></div></div>}
      
       </div>

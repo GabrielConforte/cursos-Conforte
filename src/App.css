@@ -24,6 +24,30 @@
   color: white;
 }
 
+.btn-violeta{
+  border-radius: 12px;
+  background-color: #51256e;
+  border: none;
+  color: white;
+  padding: 13px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.btn-inactivo{
+  border-radius: 12px;
+  background-color: #714f88;
+  border: none;
+  color: white;
+  padding: 13px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 .App-body{
   min-height: 70vh;
   display: flex;

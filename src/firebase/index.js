@@ -2,6 +2,7 @@
 import firebase from 'firebase/app'
 import 'firebase/storage'
 import 'firebase/firestore'
+import 'firebase/auth'
 
 
   var firebaseConfig = {
@@ -18,9 +19,11 @@ import 'firebase/firestore'
 
   const db = fb.firestore();
 
+  const auth = fb.auth()
+
   db.settings({timespampsInSnapshots:true, merge: true })
 
   
-
+  export {auth}
   export default db;
 

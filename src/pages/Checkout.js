@@ -49,12 +49,12 @@ function Checkout(suma) {
     })
    
     const order = {
-      buyer:{
+    buyer:{
         name: userName,
         phone: telefono,
-        email: email,
-        id: id
+        email: email
       },
+      userId: id,
       items:item,
       date: new Date(),
       total: total

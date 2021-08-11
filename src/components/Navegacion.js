@@ -50,7 +50,7 @@ function Navegacion(){
                   </Nav></Navbar.Collapse>
                   <div className="d-flex justify-content-end">
                    { usuario ?
-                      <div>Hola {userName}! <button className="btn btn-sm bg-primary rounded mx-1" onClick={CerrarSesion}>Cerrar sesion</button> </div>
+                      <div><Link to="/profile">Hola {userName}!</Link> <button className="btn btn-sm bg-primary rounded mx-1" onClick={CerrarSesion}>Cerrar sesion</button> </div>
                       :
                       <> <Link className="btn btn-sm bg-info rounded mx-1" to="/login">Ingresar</Link>
                     <Link className="btn btn-sm bg-info rounded mx-1" to="/signin">Crear User</Link></>

@@ -12,6 +12,7 @@ function Checkout(suma) {
   const [error, setError] = useState('')
   const [id, setId] = useState('')
   const [isLog, setIsLog] = useState(false)
+  const [textoFinal, SetTextoFinal] = useState()
   let total = suma
   
   useEffect(()=>{
@@ -29,8 +30,6 @@ function Checkout(suma) {
       }
     })
   },[])
-
-
   
   const setPedido = async (e) => {
     e.preventDefault()
@@ -69,12 +68,11 @@ function Checkout(suma) {
     try{
       const data = await db.collection('orders')
         data.add(order).then(({id}) => {
-        alert("Pedido Creado su id es: " + id)
+          SetTextoFinal("El pedido se realizo con exito, su ID es: " + id)
       }).catch(error => {
         console.log('error arrojado', error)
       }).finally(() => {
-        context.setCartData([])
-        context.setCount(0)
+        
     })
       
     }catch(e){
@@ -83,11 +81,15 @@ function Checkout(suma) {
     
   }
 
+  function aceptar(){
+    context.setCartData([])
+    context.setCount(0)
+  }
 
   return (
-          <div>
-            {isLog ?
-            <div className="container bg-dark p-1 rounded">
+          <div className="container bg-dark p-1 rounded">
+            {textoFinal !== undefined ? <div><h2 className="m-2">{textoFinal}</h2> <button className="btn-violeta"onClick={aceptar}>Aceptar</button></div>:<div>{isLog ?
+            <div >
                 
                       <h3>Datos del pedido: </h3>
                       <h4>Usuario: {userName}</h4>
@@ -120,7 +122,8 @@ function Checkout(suma) {
                 <input disabled={!userName || !email || !telefono}value="Realizar Pedido" className="col-8 btn btn-primary m-2" type="submit"/>
               </Form>
             </div>
-            }
+            }</div>}
+            
             </div>
           );
 }

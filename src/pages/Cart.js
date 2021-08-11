@@ -1,9 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,Link,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Checkout from "./Checkout";
 import {CartContext } from "../context/cartContext"
 
@@ -19,7 +15,6 @@ function Cart() {
 
   useEffect(()=>{
     setCart(context.cartData)
-    
     },[context.cartData]);
 
   return (
@@ -53,10 +48,12 @@ function Cart() {
                         
                     </td>
                 </tr>
-      ))}</tbody>
+            ))}</tbody>
       </table>
     </div>
-        <div><h4> El total de su compra es: ${suma} </h4> <hr></hr>
+    <div><h4> El total de su compra es: ${suma} </h4>
+    
+    <hr></hr>
                         <Link to="/Checkout">
                             <button className="btn-violeta m-1">Comprar</button></Link> 
                             <button onClick={()=>{
@@ -65,14 +62,15 @@ function Cart() {
                                 
                                 className="btn-violeta m-1">Limpiar
                             </button></div> 
-              <Switch>
-                  <Route path="/Checkout">
-                      <Checkout total={suma}/>
-                  </Route>
-              </Switch>
-              </Router> : <div className="App-body"><div> Tu carrito esta Vacio </div>
-                      <div><Link to="/"><button className="btn btn-primary">Vamos <b>alla!</b></button></Link></div></div>}
-     
+                        <Switch>
+                            <Route path="/Checkout">
+                                <Checkout total={suma}/>
+                            </Route>
+                        </Switch>
+                        </Router>
+                        :
+                        <div className="App-body"><div> Tu carrito esta Vacio </div>
+                        <div><Link to="/"><button className="btn btn-primary">Vamos <b>alla!</b></button></Link></div></div>}
       </div>
   );
 }

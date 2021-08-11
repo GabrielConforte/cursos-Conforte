@@ -16,7 +16,9 @@ function UserSign(){
 
     const registrarUser =(e)=>{
         e.preventDefault()
-        if(comprobar===password){
+            if(comprobar===password){
+            if(telefono.trim()){
+                if(usuario.trim()){
             auth.createUserWithEmailAndPassword(email,password)
             .then(cred => {return db.collection('users').doc(cred.user.uid).set({
                 userName: usuario,
@@ -33,10 +35,15 @@ function UserSign(){
                 setError('Password demasiado debil, ingrese mas de 6 caracteres')
             }
             })
-        }else{
-            setError('Contraseña No coincide')
-        }
-    }
+            }else{
+            setError('Nombre de usuario no puede estar vacio')
+            }
+            }else{
+                setError('Telefono no puede estar vacio')
+            }
+            }else{
+                setError('Contraseña No coincide')
+    }}
 
     return(
         <div className="App-Body p-2">

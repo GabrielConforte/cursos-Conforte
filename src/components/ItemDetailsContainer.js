@@ -57,14 +57,3 @@ function ItemDetailsContainer(){
 }
 
 export default ItemDetailsContainer;
-
-/*
-const id = useParams()
-    
-     useEffect(() => {
-          const data = async () => {
-              const sata = await getDataID(id); 
-              setCurso(sata)
-          }
-          data([])
-      },[id]);*/

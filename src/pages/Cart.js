@@ -64,8 +64,8 @@ function Cart() {
       </table>
     </div>
         <div><h4> El total de su compra es: ${suma} </h4> <hr></hr>
-                       {comprobar ? <Link to="/Checkout">
-                            <button className="btn-violeta m-1">Comprar</button></Link> : <button disabled={!comprobar}className="btn-inactivo m-1">Para comprar Inicia Sesion</button>}
+                        <Link to="/Checkout">
+                            <button className="btn-violeta m-1">Comprar</button></Link> 
                             <button onClick={()=>{
                                 context.setCartData([])
                                 context.setCount(0)}}

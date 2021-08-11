@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import Checkout from "./Checkout";
 import {CartContext } from "../context/cartContext"
-import {auth} from '../firebase/index';
 
 function Cart() {
 
@@ -20,11 +19,7 @@ function Cart() {
 
   useEffect(()=>{
     setCart(context.cartData)
-    auth.onAuthStateChanged((user)=>{
-      if(user){
-        setComprobar(true)
-      }
-    })
+    
     },[context.cartData]);
 
   return (

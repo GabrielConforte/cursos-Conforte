@@ -12,8 +12,6 @@ function Cart() {
 
   const context = useContext(CartContext)
   const [cart, setCart] = useState([])
-  const [comprobar, setComprobar] = useState(false)
-
   let con = context.cartData
   let suma = 0;
   con.forEach (function(con){

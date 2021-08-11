@@ -45,28 +45,40 @@ function onAdd(e){
 
     return(
         <>
-            <div className="container m-2">
-                <div className="row d-flex justify-content-center">
-                    
-                    <Card className="col-sm-6 m-1">
-                            <Card.Body>
-                                <Card.Img src={imagen}/>
-                            </Card.Body>
-                    </Card>
-
-                    <Card className="col-sm-6 m-1">
-                        <Card.Body>
+            <div className="container mt-2">
+                
+            <Card >
+                <div className="row">
+                <div className="col-12 col-lg-6">
+                <Card.Img  src={imagen}/>
+               
+                     
+                </div>
+                <div className="col-12 col-lg-6">
+                    <Card.Body>
                             <Card.Title>{titulo}</Card.Title>
+                            <Card.Text><b>${price} + iva</b></Card.Text>
                             <Card.Text>{texto}</Card.Text>
                             {qAdd > 0 ?
                             <Link to='/cart'>
                                 <button id="compra" className="m-1 btn btn-primary sm">COMPRAR</button>
                             </Link>:
-                                <div><ItemCount stock={st} onAdd={onAdd}/> </div>}
-                        </Card.Body>
-                    </Card>
-                </div>
+                                <ItemCount stock={st} onAdd={onAdd}/>}
+                    </Card.Body>
+                </div></div>
+            </Card>
+            <div>
+                <Card className="mt-2 col-12">
+                    <Card.Body>
+                        <Card.Title>Mas Info</Card.Title>
+                        <Card.Text>
+                            {texto}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
             </div>
+            </div>
+            
             </>
         );
 

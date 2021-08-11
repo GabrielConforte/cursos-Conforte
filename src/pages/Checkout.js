@@ -117,7 +117,7 @@ function Checkout(suma) {
                   <Form.Control onChange={(e)=>{setTelefono(e.target.value)}} type="phone" placeholder="Telefono" value={telefono}/>
                 </Form.Group>
 
-                <input value="Realizar Pedido" className="col-8 btn btn-primary m-2" type="submit"/>
+                <input disabled={!userName || !email || !telefono}value="Realizar Pedido" className="col-8 btn btn-primary m-2" type="submit"/>
               </Form>
             </div>
             }

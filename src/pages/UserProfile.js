@@ -21,25 +21,12 @@ const UserProfile = ()=>{
             })
             let item = db.collection('orders').where('userId','==',id)
             console.log(item)
-            /**item.get().then((querySnapshot) => {
-                    if(querySnapshot.size === 0){
-                        console.log("no resultado")
-                    }else{ */
+            
             item.get().then((querySnapshot)=>{
                 if(querySnapshot.size === 0){
                     console.log("no resultado")
                 }else{
-                    /**setCurso(querySnapshot.docs.map(doc => {
-                               return {
-                                    id:doc.id,
-                                    categoria:doc.data().categoria,
-                                    tittle:doc.data().tittle,
-                                    text:doc.data().text,
-                                    image:doc.data().image,
-                                    price:doc.data().price}}))
-                                        }
-                            }).catch(error => {console.log("error", error)
-                            }).finally(()=>{setLoading(false)})}, 1500) */
+                   
                     setOrders(querySnapshot.docs.map(doc => {
                         return {
                             items: doc.data().items,
@@ -55,32 +42,54 @@ const UserProfile = ()=>{
       },[id])
 
     return(
-        <div className="App-body">
+        <div className="mt-2 container bg-dark p-1 rounded">
             <h4>Usuario: {userName}</h4>
             <h4>Direccion de Email: {email}</h4>
             <h4>Telefono: {telefono}</h4>
-
-            <h4>Mis Pedidos: </h4>
+            <div className="container p-4">
+            Mis Pedidos: 
+           
             {orders.map((item, index) => {
-                    return(
+                    return( <table className="table">
+            <thead>
+                <tr className="bg-secondary col">
+                    <th scope="col">Pedido: ID: {item.id}</th>
+                </tr>
+              </thead>
+              <tbody>
                     <div key={index}>
                             {item.items.map((i, index)=>{
                                 return(
-                                    <div key={index}>
-                                        <div>
-                                            <ul>Titulo: {i.tittle}
-                                               <li>Precio: {i.price}</li> 
-                                               <li>Cantidad: {i.cantidad}</li> 
-                                            </ul>
+                                        <div key={index}>
+                                             {i.tittle} - $ {i.price} x {i.cantidad}
                                         </div>
-                                    </div>
                                 )
                             })}
-                        <p>ID: {item.id}</p>
                     </div>
-                            )
+                            </tbody>
+                </table>)
                         })}
+            </div>            
         </div>
     )
 }
 export default UserProfile;
+
+/*
+
+<tr key={curso.id}>
+                    <th scope="row"></th>
+                    <td >{curso.titulo}</td>
+                    <td>x{curso.cantidad}</td>
+                    <td>${curso.price*curso.cantidad}</td>
+                    <td>
+                        <button onClick={()=>{
+                          let a = context.cartData.filter((id) => id.id !== curso.id)
+                          context.setCartData(a)
+                          context.setCount(context.count-curso.cantidad)
+                        }}className="btn btn-danger btn-sm">Eliminar</button>
+                        
+                    </td>
+                </tr>
+
+*/

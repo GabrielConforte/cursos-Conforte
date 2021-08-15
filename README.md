@@ -7,7 +7,7 @@ Sapiens es un sitio web, orientada a cursos online en video. Creada con React JS
 
 En este sitio los usuarios pueden:
 
-- Crearse Perfiles
+- Crearse Perfiles con sus datos y actualizarlos
 - Navegar entre los cursos
 - Agregar Cursos al Carrito
 - Comprar

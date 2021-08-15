@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import db, { auth } from '../firebase/index';
+import { Link } from "react-router-dom";
 
 const UserProfile = ()=>{
 
@@ -42,30 +43,34 @@ const UserProfile = ()=>{
       },[id])
 
     return(
-        <div className="mt-2 container bg-dark p-1 rounded">
+        <div className="modal-body mt-2 container bg-dark  p-2 rounded">
             <h4>Usuario: {userName}</h4>
             <h4>Direccion de Email: {email}</h4>
             <h4>Telefono: {telefono}</h4>
+
+            
+                <Link to="/profileUpdate"><button className="btn btn-primary">Actualizar Datos</button></Link>
+                
+            
+
             <div className="container p-4">
-            Mis Pedidos: 
+            <h3>Mis Pedidos: </h3>
            
             {orders.map((item, index) => {
-                    return( <table className="table">
+                    return( <table key={index} className="table">
             <thead>
-                <tr className="bg-secondary col">
-                    <th scope="col">Pedido: ID: {item.id}</th>
+                <tr className="bg-secondary col-3">
+                    <th scope="col">Pedido: ID: {item.id} - ${item.total.total}</th>
                 </tr>
               </thead>
-              <tbody>
-                    <div key={index}>
+              <tbody >
                             {item.items.map((i, index)=>{
                                 return(
-                                        <div key={index}>
-                                             {i.tittle} - $ {i.price} x {i.cantidad}
-                                        </div>
+                                        <tr key={index}>
+                                             <td >{i.tittle} x {i.cantidad}</td>
+                                        </tr>
                                 )
                             })}
-                    </div>
                             </tbody>
                 </table>)
                         })}
@@ -74,22 +79,3 @@ const UserProfile = ()=>{
     )
 }
 export default UserProfile;
-
-/*
-
-<tr key={curso.id}>
-                    <th scope="row"></th>
-                    <td >{curso.titulo}</td>
-                    <td>x{curso.cantidad}</td>
-                    <td>${curso.price*curso.cantidad}</td>
-                    <td>
-                        <button onClick={()=>{
-                          let a = context.cartData.filter((id) => id.id !== curso.id)
-                          context.setCartData(a)
-                          context.setCount(context.count-curso.cantidad)
-                        }}className="btn btn-danger btn-sm">Eliminar</button>
-                        
-                    </td>
-                </tr>
-
-*/

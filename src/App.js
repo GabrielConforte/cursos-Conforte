@@ -17,6 +17,7 @@ import UserLog from './pages/UserIn';
 import { CartContext } from "./context/cartContext"
 import 'bootswatch/dist/quartz/bootstrap.min.css'
 import UserProfile from './pages/UserProfile';
+import UpdateProfile from './pages/ProfileUpdate'
 import './firebase';
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
                       <Switch>
                               <Route path="/profile">
                                 <UserProfile/>
+                              </Route>
+                              <Route path="/profileUpdate">
+                                <UpdateProfile/>
                               </Route>
                               <Route path="/login">
                                 <UserLog/>

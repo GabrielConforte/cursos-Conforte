@@ -13,7 +13,6 @@ function UserLog(){
     const loginUsuario =(e)=>{
         e.preventDefault()
             auth.signInWithEmailAndPassword(email,password)
-            .then(r => console.log(r))
             .then(() => historial.push('/'))
             .catch(e => {
                 //auth/user-not-found

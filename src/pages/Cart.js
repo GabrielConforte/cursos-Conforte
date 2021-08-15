@@ -20,8 +20,8 @@ function Cart() {
   return (
     <div > {context.cartData.length !== 0 ?
     <Router>
-    <h1>Tu carrito</h1>
-    <div className="row">
+    <h1> Tu carrito</h1>
+    <div className="row bg-dark rounded">
       <table className="table">
               <thead>
                 <tr>

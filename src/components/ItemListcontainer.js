@@ -8,7 +8,6 @@ function ItemListcontainer(){
     const [loading, setLoading] = useState(true)
     let { categoria } = useParams()
         useEffect(() => {
-            setTimeout(() => {
                 const itemCollection = db.collection('items')
                 let item = undefined;
                 if(categoria!==undefined){
@@ -31,7 +30,7 @@ function ItemListcontainer(){
                                     price:doc.data().price}}))
                                         }
                             }).catch(error => {console.log("error", error)
-                            }).finally(()=>{setLoading(false)})}, 1500)
+                            }).finally(()=>{setLoading(false)})
                             },[categoria]);
                 return(
                     <div>

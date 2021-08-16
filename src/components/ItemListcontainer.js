@@ -38,7 +38,7 @@ function ItemListcontainer(){
                         <ItemList curso={curso}></ItemList> :
                         <div className="container">
                             <div className="row">
-                                <div className="progress m-2 App-body col-12"></div>
+                                <div className="progress App-body mt-2 col-12"></div>
                             </div> 
                         </div>
                         }

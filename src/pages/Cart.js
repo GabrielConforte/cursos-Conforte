@@ -22,7 +22,7 @@ function Cart() {
     <Router>
     <h1> Tu carrito</h1>
     <div className="row bg-dark rounded">
-      <table className="table">
+      <table className="p-2 table">
               <thead>
                 <tr>
                   <th scope="col"> </th>

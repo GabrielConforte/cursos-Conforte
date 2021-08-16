@@ -102,7 +102,7 @@ function Checkout(suma) {
               </div>
               :
             <div>
-              <Form onSubmit={setPedido} className="rounded bg-dark row d-flex justify-content-center ">
+              <Form onSubmit={setPedido} className="rounded row d-flex justify-content-center ">
 
                 <Form.Group className="col-8 m-2" controlId="formBasicName">
                       <Form.Label><h4>Nombre</h4></Form.Label>

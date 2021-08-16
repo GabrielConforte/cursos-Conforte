@@ -36,3 +36,4 @@ Todo los datos estan alojados en firebase. Los usuarios al comprar reciben una i
 
 
 #### Todo el sitio posee contenido mockup como lorem ipsum y no es real
+#### Hay un error con el navBar cuando se esta en modo celular. Resulta ser una incompativilidad con el modo de desarrollo en el build final no esta.

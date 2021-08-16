@@ -3,7 +3,7 @@
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1366 768" style="enable-background:new 0 0 1366 768;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#0071BC;}
+	.st0{fill:#FFFFFF;}
 	.st1{font-family:'FuturaStd-Medium';}
 	.st2{font-size:159.8245px;}
 	.st3{letter-spacing:12;}
@@ -11,6 +11,7 @@
 	.st5{fill:#F56A72;}
 	.st6{fill:#F6DD5A;}
 	.st7{fill:none;stroke:#FBB03B;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st8{fill:#0071BC;}
 </style>
 <text transform="matrix(1 0 0 1 429.0869 395.7139)" class="st0 st1 st2 st3">Sapiens</text>
 <path class="st4" d="M314.38,289.83v98.47c-3.21,8.47-21.62,20.75-31.27,1.46c-12.27-1.46-21.04-11.98-17.53-25.71
@@ -23,7 +24,7 @@
 	c-1.53,12.71,7.67,18.74,12.05,25.53c4.38,6.79,4.82,9.97,4.82,9.97h8.77h8.77c0,0,0.44-3.18,4.82-9.97
 	C332.35,341.14,341.55,335.12,340.02,322.41z"/>
 <line class="st7" x1="314.38" y1="357.91" x2="314.38" y2="344.65"/>
-<path class="st0" d="M318.99,375.51h-9.17c-2.33,0-4.22-1.89-4.22-4.22v-13.38h17.6v13.38
+<path class="st8" d="M318.99,375.51h-9.17c-2.33,0-4.22-1.89-4.22-4.22v-13.38h17.6v13.38
 	C323.21,373.62,321.32,375.51,318.99,375.51z"/>
 <circle class="st7" cx="314.3" cy="338.84" r="5.81"/>
 </svg>

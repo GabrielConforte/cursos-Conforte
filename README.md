@@ -14,7 +14,8 @@ En este sitio los usuarios pueden:
 - Llevar un registro de los cursos comprados desde el perfil con sus respectivos *IDs*
 En caso de no estar logueados, tambien se pueden comprar cursos.
 
-![Image text](https://github.com/GabrielConforte/cursos-Conforte/blob/master/GIF%2015-8-2021%2015-13-57.gif)
+funcionamiento del sitio en responsive y en modo desktop
+![Image text](https://github.com/GabrielConforte/cursos-Conforte/blob/master/GIF%2015-8-2021%2023-58-11%20-%20pc.gif?raw=true)
 
 Todo los datos estan alojados en firebase. Los usuarios al comprar reciben una id que esta relacionada con el pedido que realizaron. Ademas en caso de estar logueados, tendran una id que se relaciona con los pedidos. Esto sirve para llevar el registro de a quien pertenece cada compra.
 

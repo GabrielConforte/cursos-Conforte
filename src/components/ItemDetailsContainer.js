@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
 import db from '../firebase/index'
 import {useParams} from 'react-router-dom';
+import Loaders from '../components/Loaders'
 
 function ItemDetailsContainer(){
   const [curso, setCurso] = useState();
@@ -46,11 +47,7 @@ function ItemDetailsContainer(){
           {error === true ? <div className="App-body"><div>  <h1>404</h1> <h2>¯\_(ツ)_/¯</h2><p>no existe</p> </div> </div> :<> {
           loading === false ?
           <ItemDetail imagen={curso[0].image} titulo={curso[0].tittle} texto={curso[0].text} price={curso[0].price} id={curso[0].id} stock={curso[0].stock}></ItemDetail> :
-          <div className="container">
-            <div className="row">
-              <div className="progress m-2 App-body"></div>
-            </div>
-          </div>
+         <Loaders/>
           }</>}
         </div>
       )

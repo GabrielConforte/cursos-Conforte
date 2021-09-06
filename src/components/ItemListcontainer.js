@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import db from '../firebase/index';
 import {useParams} from 'react-router-dom';
+import Loaders from '../components/Loaders'
 
 function ItemListcontainer(){
     const [curso, setCurso] = useState([]);
@@ -36,11 +37,7 @@ function ItemListcontainer(){
                     <div>
                         {loading === false ?
                         <ItemList curso={curso}></ItemList> :
-                        <div className="container">
-                            <div className="row">
-                                <div className="progress App-body mt-2 col-12"></div>
-                            </div> 
-                        </div>
+                        <Loaders/>
                         }
                     </div>
                 )

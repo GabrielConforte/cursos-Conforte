@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Checkout from "./Checkout";
 import {CartContext } from "../context/cartContext"
 
@@ -7,7 +7,9 @@ function Cart() {
 
   const context = useContext(CartContext)
   const [cart, setCart] = useState([])
+  const [verForm, setVerForm] = useState(false)
   let con = context.cartData
+  
   let suma = 0;
   con.forEach (function(con){
     suma += (con.cantidad*con.price)
@@ -18,8 +20,7 @@ function Cart() {
     },[context.cartData]);
 
   return (
-    <div > {context.cartData.length !== 0 ?
-    <Router>
+    <div > {context.cartData.length !== 0 ?<>
     <h1> Tu carrito</h1>
     <div className="row bg-dark rounded">
       <table className="p-2 table">
@@ -54,20 +55,16 @@ function Cart() {
     <div><h4> El total de su compra es: ${suma} </h4>
     
     <hr></hr>
-                        <Link to="/Checkout">
-                            <button className="btn-violeta m-1">Comprar</button></Link> 
+                            <button className="btn-violeta m-1" onClick={()=>{setVerForm(true)}}>Comprar</button>
                             <button onClick={()=>{
                                 context.setCartData([])
                                 context.setCount(0)}}
                                 
                                 className="btn-violeta m-1">Limpiar
                             </button></div> 
-                        <Switch>
-                            <Route path="/Checkout">
-                                <Checkout total={suma}/>
-                            </Route>
-                        </Switch>
-                        </Router>
+
+                            {verForm ? <Checkout total={suma}/> : <></>}</>
+                                
                         :
                         <div className="App-body"><div> Tu carrito esta Vacio </div>
                         <div><Link to="/"><button className="btn btn-primary">Vamos <b>alla!</b></button></Link></div></div>}
